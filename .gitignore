@@ -1,0 +1,8 @@
+/bin/*
+!/bin/.gitkeep
+*.exe
+*.o
+*.obj
+*.out
+*.log
+CMakeFiles/

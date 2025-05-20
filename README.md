@@ -135,6 +135,6 @@ BOARD_ROWS_WITH_P_K_DOTS
 ## 👤 Author
 **Faqih Muhammad Syuhada** (13523057)  
 Informatics — Institut Teknologi Bandung  
-<https://github.com/FaqihMSY>
-
+- <https://github.com/FaqihMSY>
+- [LinkedIn](https://www.linkedin.com/in/faqihmuhammadsyuhada/) - 13523057@std.stei.itb.ac.id
 > Built with ♥︎, avocado and manggo juice, a dark‑theme terminal and her support.

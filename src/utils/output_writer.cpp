@@ -45,21 +45,27 @@ void OutputWriter::printSolution(const Board &initial,
     out << "Papan Awal:\n";
     printBoard(initial, '.', out, colored);
     out << '\n';
-
+    int moveCount = 0;
     if (solution.moves.empty()) {
         out << "Tidak ditemukan solusi!\n";
     } else {
         Board current = initial;
+        
+        char tempPiece = 'P';
         for (size_t i = 0; i < solution.moves.size(); ++i) {
             const auto &[piece, dir] = solution.moves[i];
-            out << "Gerakan " << (i + 1) << ": " << piece << "-" << dir << "\n";
-            current.makeMove(piece, dir);
-            printBoard(current, piece, out, colored);
-            out << '\n';
+            if(tempPiece != piece) {
+                moveCount++;
+                tempPiece = piece;
+                out << "Gerakan " << moveCount << ": " << piece << "-" << dir << "\n";
+                current.makeMove(piece, dir);
+                printBoard(current, piece, out, colored);
+                out << '\n';
+            }
         }
     }
 
     out << "\nStatistik:\n";
     out << "Jumlah node diperiksa: " << solution.nodesVisited << '\n';
-    out << "Jumlah langkah: " << solution.moves.size() << '\n';
+    out << "Jumlah langkah: " << moveCount << '\n';
 }
